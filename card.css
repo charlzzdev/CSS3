@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body{
+      font-family: 'Nunito', sans-serif;
+}
+
+:focus{
+      outline: 0;
+}
+
+.card{
+      width: 30rem;
+      height: auto;
+      background: #f5f6fa;
+      margin: 3rem auto;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px 0 #999;
+}
+
+.card-header{
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #f5f6fa;
+      height: 16rem;
+      background-image: url(https://wallpapercave.com/wp/KNCHM1Z.jpg);
+      background-position: center;
+      background-size: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+}
+
+.card-body{
+      text-align: justify;
+      line-height: 130%;
+      padding: 1rem;
+      min-height: 20rem;
+      border-radius: 20px;
+}
+
+.card-footer{
+      display: flex;
+      flex-direction: row;
+      padding: 2.5rem 2rem 1rem 2rem;
+      background: #d1d8e0;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      
+      clip-path: polygon(0 0, 50% 15%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.footer-body{
+      flex: 2;
+      line-height: 120%;
+}
+
+.footer-actions{
+      flex: 1;
+      align-self: center;
+}
+
+.btn{
+      border: 0;
+      background: #00a8ff;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px 0 #777;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #f5f6fa;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px;
+      position: relative;
+      overflow: hidden;
+
+      transition: 200ms;
+}
+
+.btn:hover{
+      background: #0097e6;
+}
+
+.btn:not(:active)::after{
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 100px;
+      transform: translateX(-50%) translateY(50px);
+      overflow: hidden;
+      opacity: 0.8;
+      background: #fff;
+
+      animation: btnEffect 700ms ease;
+}
+
+@keyframes btnEffect {
+      to{
+            transform: translateX(-50%) translateY(-50px);
+            opacity: 0;
+      }
+}
+
+@media (max-width: 500px){
+      .card{
+            width: 90vw;
+            height: auto;
+            margin: 1rem auto;
+      }
+
+      .card-header{
+            height: 8rem;
+      }
+
+      .card-body{
+            min-height: auto;
+      }
+
+      .card-footer{
+            flex-direction: column;
+            clip-path: polygon(0 0, 50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
+      }
+
+      .card-footer .footer-actions{
+            padding-top: 1rem;
+      }
+}
